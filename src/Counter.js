@@ -23,6 +23,12 @@ export default class Counter extends Component {
     });
   };
 
+  onReset = () => {
+    this.setState({
+      count: 0,
+    });
+  };
+
   render() {
     const { count } = this.state;
 
@@ -35,7 +41,9 @@ export default class Counter extends Component {
         <button onClick={this.handleDecrement} className="full-width">
           Decrement
         </button>
-        <button className="full-width">Reset</button>
+        <button onClick={this.onReset} className="full-width">
+          Reset
+        </button>
       </section>
     );
   }
